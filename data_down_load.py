@@ -8,7 +8,7 @@ current_dir = os.getcwd()
 dataset_dir = os.path.join(current_dir, "datasets")
 
 # Load the WURA dataset from huggingface
-dataset = load_dataset("castorini/wura", data_dir=dataset_dir)
+dataset = load_dataset("castorini/wura", data_dir=dataset_dir, trust_remote_code=True)
 
 print(f"WURA dataset downloaded and saved to: {dataset_dir}")
 
