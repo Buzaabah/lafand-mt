@@ -1,11 +1,11 @@
-#import os
+import os
 
 from datasets import load_dataset
 
 dataset_dir = "datasets"
 #os.makedirs(save_dir, exist_ok=True)
 
-#save_path = os.path.join(os.getcwd(), save_dir)
+save_path = os.path.join(os.getcwd(), dataset_dir)
 
 dataset = load_dataset("castorini/wura", data_dir=dataset_dir)
 
