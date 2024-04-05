@@ -3,15 +3,15 @@ gpus=0,1,2,3,4,5,6,7
 
 DATE_WITH_TIME=$(date "+%Y%m%d-%H%M%S")
 
-tokenizer_name=google/byt5-xxl
-model_name=google/byt5-xxl
+tokenizer_name=google/byte5-base
+model_name=google/byte5-base
 data_dir=../datasets/africanlp
 max_source_length=256
 max_target_length=256
 val_max_target_length=150
 mode=train
 
-output_dir=../results/africanlp/byt5xxl
+output_dir=../results/africanlp/byte5-base
 evaluation_strategy=steps
 num_train_epochs=4
 per_device_train_batch_size=2
