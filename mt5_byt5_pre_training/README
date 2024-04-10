@@ -5,7 +5,7 @@ requirement:
 * install apex to use fp16, see https://github.com/NVIDIA/apex
 * install fairscale to use distributed training, see https://github.com/facebookresearch/fairscale
 
-preprocess data to the input format:
+preprocess data to the input format
 run preprocess.py
 line 74, change the number 258 to the first token id when using mT5.
 

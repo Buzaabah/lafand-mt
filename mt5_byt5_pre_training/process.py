@@ -63,7 +63,9 @@ def add_noise(sentence, tokenizer, percent=0.15):
 
 if __name__ == "__main__":
     tokenizer = AutoTokenizer.from_pretrained("google/byt5-base")
-    files = ['af',  'am',  'ar',  'en',  'fr',  'ha',  'ig',  'mg',  'ny',  'om',  'pcm',  'rw',  'sn',  'so',  'st',  'sw',  'xh',  'yo',  'zu']
+    #files = ['af',  'am',  'ar',  'en',  'fr',  'ha',  'ig',  'mg',  'ny',  'om',  'pcm',  'rw',  'sn',  'so',  'st',  'sw',  'xh',  'yo',  'zu']
+    files = ['pcm',  'rw']
+
     sources, targets = [], []
     for f in files:
         print(f)
