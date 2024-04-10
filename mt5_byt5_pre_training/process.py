@@ -64,7 +64,8 @@ def add_noise(sentence, tokenizer, percent=0.15):
 if __name__ == "__main__":
     tokenizer = AutoTokenizer.from_pretrained("google/byt5-base")
     #files = ['af',  'am',  'ar',  'en',  'fr',  'ha',  'ig',  'mg',  'ny',  'om',  'pcm',  'rw',  'sn',  'so',  'st',  'sw',  'xh',  'yo',  'zu']
-    files = ['pcm',  'rw']
+    #files = ['pcm',  'rw']
+    """
 
     sources, targets = [], []
     for f in files:
@@ -81,12 +82,14 @@ if __name__ == "__main__":
         f.writelines(sources)
     with open('train.target' + '.' + str(i), 'w') as f:
         f.writelines(targets)
-    #lines = open('Processed/af/eval.af').readlines()
-    #for i in range(1000):
-    #    s, t = add_noise(lines[i], tokenizer)
-    #    sources.append(' '.join(list(map(str, s))).strip() + '\n')
-    #    targets.append(' '.join(list(map(str, t))).strip() + '\n')
-    #with open('train.source', 'w') as f:
-    #    f.writelines(sources)
-    #with open('train.target', 'w') as f:
-    #    f.writelines(targets)
+    """
+    sources, targets = [], []
+    lines = open('../data/Test.json').readlines()
+    for i in range(1000):
+        source, target = add_noise(lines, tokenizer)
+        sources.append(' '.join(list(map(str, source))).strip() + '\n')
+        targets.append(' '.join(list(map(str, target))).strip() + '\n')
+    with open('train.source', 'w') as f:
+        f.writelines(sources)
+    with open('train.target', 'w') as f:
+        f.writelines(targets)
