@@ -37,15 +37,15 @@ conda activate /scratch/network/hb3815/.conda/envs/torch-env
 
 DATE_WITH_TIME=$(date "+%Y%m%d-%H%M%S")
 
-tokenizer_name=google/byte5-base
-model_name=google/byte5-base
+tokenizer_name=google/mt5-base
+model_name=google/mt5-base
 data_dir=../datasets/africanlp
 max_source_length=256
 max_target_length=256
 val_max_target_length=150
 mode=train
 
-output_dir=../results/africanlp/byte5-base
+output_dir=../results/africanlp/mt5-base
 evaluation_strategy=steps
 num_train_epochs=4
 per_device_train_batch_size=2
