@@ -2,8 +2,8 @@
 #SBATCH --job-name=afner        # create a short name for your job
 #SBATCH --nodes=1               # node count
 #SBATCH --ntasks=1              # total number of tasks across all nodes
-#SBATCH --cpus-per-task=1       # cpu-cores per task (>1 if multi-threaded tasks)
-#SBATCH --mem-per-cpu=4G       # total memory per node (4 GB per cpu-core is default)
+#SBATCH --cpus-per-task=4       # cpu-cores per task (>1 if multi-threaded tasks)
+#SBATCH --mem-per-cpu=32G       # total memory per node (4 GB per cpu-core is default)
 #SBATCH --gres=gpu:1           # number of gpus per node
 ####### --partition=mig
 #SBATCH --constraint=a100       # for running on an A100 GPU
@@ -22,7 +22,7 @@ echo "Running on host" $(hostname)
 printenv | grep -i slurm | sort
 
 module purge
-module load anaconda3/2024.2
+module load anaconda3/2023.9
 #to run experiments in home
 #conda activate /home/hb3815/.conda/envs/torch-env
 #to run experiments on scratch
@@ -62,7 +62,7 @@ warmup_steps=10000
 learning_rate=1e-4
 logging_dir=../results/pqa/all_l3
 
-CUDA_VISIBLE_DEVICES=${gpus} torchrun --nproc_per_node=8 main.py \
+CUDA_VISIBLE_DEVICES=${gpus} torchrun --nproc_per_node=4 main.py \
   --tokenizer_name ${tokenizer_name} \
   --model_name ${model_name} \
   --data_dir ${data_dir} \
