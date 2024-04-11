@@ -38,6 +38,7 @@ conda activate /scratch/network/hb3815/.conda/envs/torch-env
 #conda activate torch-env
 
 #gpus=0,1,2,3,4,5,6,7
+gpus=0
 
 DATE_WITH_TIME=$(date "+%Y%m%d-%H%M%S")
 
