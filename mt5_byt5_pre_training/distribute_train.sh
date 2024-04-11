@@ -2,7 +2,7 @@
 #SBATCH --job-name=afner        # create a short name for your job
 #SBATCH --nodes=1               # node count
 #SBATCH --ntasks=1              # total number of tasks across all nodes
-#SBATCH --cpus-per-task=4       # cpu-cores per task (>1 if multi-threaded tasks)
+#SBATCH --cpus-per-task=1       # cpu-cores per task (>1 if multi-threaded tasks)
 #SBATCH --mem-per-cpu=32G       # total memory per node (4 GB per cpu-core is default)
 #SBATCH --gres=gpu:1           # number of gpus per node
 ####### --partition=mig
@@ -62,7 +62,7 @@ warmup_steps=10000
 learning_rate=1e-4
 logging_dir=../results/pqa/all_l3
 
-CUDA_VISIBLE_DEVICES=${gpus} torchrun --nproc_per_node=4 main.py \
+CUDA_VISIBLE_DEVICES=${gpus} torchrun --nproc_per_node=1 main.py \
   --tokenizer_name ${tokenizer_name} \
   --model_name ${model_name} \
   --data_dir ${data_dir} \
