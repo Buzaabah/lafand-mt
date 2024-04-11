@@ -87,5 +87,5 @@ CUDA_VISIBLE_DEVICES=${gpus} torchrun --nproc_per_node=8 main.py \
   --overwrite_output_dir \
   --load_best_model_at_end \
   --num_labels 3 \
-  --sharded_ddp zero_dp_3\
-  --fp16 
+  --sharded_ddp zero_dp_3
+#  --fp16
