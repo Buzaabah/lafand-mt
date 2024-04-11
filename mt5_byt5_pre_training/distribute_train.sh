@@ -3,7 +3,7 @@
 #SBATCH --nodes=1               # node count
 #SBATCH --ntasks=1              # total number of tasks across all nodes
 #SBATCH --cpus-per-task=1       # cpu-cores per task (>1 if multi-threaded tasks)
-#SBATCH --mem-per-cpu=128G       # total memory per node (4 GB per cpu-core is default)
+#SBATCH --mem-per-cpu=4G       # total memory per node (4 GB per cpu-core is default)
 #SBATCH --gres=gpu:1           # number of gpus per node
 ####### --partition=mig
 #SBATCH --constraint=a100       # for running on an A100 GPU
