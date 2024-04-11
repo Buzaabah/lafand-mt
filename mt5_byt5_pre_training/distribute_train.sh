@@ -15,6 +15,8 @@
 
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+export OMP_STACKSIZE=10M
+
 # which gpu node was used
 echo "Running on host" $(hostname)
 
