@@ -13,6 +13,8 @@
 #SBATCH --mail-type=fail        # send mail if job fails
 #SBATCH --mail-user=hb3815@princeton.edu
 
+
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 # which gpu node was used
 echo "Running on host" $(hostname)
 
